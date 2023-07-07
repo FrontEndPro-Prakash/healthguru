@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health Guru | Pateint Details</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
+	<link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+	<link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+	<link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+	<link href="css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+	<link href="css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
+	<link href="css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+	<link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+	 
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu side_nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> 
+						<span>
+                            <a href="index.html"><img src="img/hg_logo.svg"/></a>
+                        </span>
+                        </div>
+                        <div class="logo-element">
+                            <a href="index.html"><a href="index.html"><img src="img/hg_logo_icon.svg"/></a></a>
+                        </div>
+                    </li>
+					<li class="sidebar_profile">
+						<a href="edit_profile.html" class="profile_icon"><i class="fa fa-pencil-square-o" aria-hidden="true" style="float:right;"></i></a>
+						<div class="dropdown profile-element"> 
+							<span class="profile_pic">
+								<img alt="image" class="img-circle" src="img/doctor.jpg" />
+							</span>
+							<span class="clear"> 
+								<span class="block m-t-xs"> 
+									<strong class="font-bold">David Williams</strong>
+								</span>
+								<span class="text-xs block">Clinic Head</span>
+							</span>
+						</div>
+					</li>
+                    <li>
+                        <a href="index.html" data-toggle="tooltip" data-placement="right" title="Appointments"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="nav-label">Appointments</span></a>
+                    </li>
+					 <li class="active">
+                        <a href="pateint.html" data-toggle="tooltip" data-placement="right" title="Patients"><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> <span class="nav-label">Patients</span> </a>
+                    </li>
+					 <li>
+                        <a href="billing.html" data-toggle="tooltip" data-placement="right" title="Billing"><i class="fa fa-inr" aria-hidden="true"></i> <span class="nav-label">Billing</span></a>
+                    </li>
+					 <li>
+                        <a href="message.html" data-toggle="tooltip" data-placement="right" data-original-title="Message" title="Message"><i class="fa fa-envelope" aria-hidden="true"></i><span class="nav-label">Message</span></a>
+                    </li>
+					 <li>
+                        <a href="settings.html" data-toggle="tooltip" data-placement="right" title="Settings"><i class="fa fa-cog" aria-hidden="true"></i> <span class="nav-label">Settings</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right right_header">
+				<li class="Start_tour_btn">
+					<a>
+						<button class="btn btn-default startTour" href="#"><i class="fa fa-play" aria-hidden="true"></i> Start Tour</button>
+					</a>
+				</li>
+				<li class="right-side-profile">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-header custom_header">
+							<div class="dropdown profile-element"> 
+								<span class="profile_pic">
+									<img alt="image" class="img-circle" src="img/profile_small.jpg" />
+								</span>
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear"> 
+									<span class="block m-t-xs"> 
+										<strong class="font-bold">DAD's Clinic</strong>
+									</span> 
+								</span>
+								<i class="fa fa-sort-desc" aria-hidden="true"></i> </a>
+								<ul class="dropdown-menu animated fadeInRight m-t-xs profile_menu">
+									<li><a href="edit_profile.html"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp; Edit profile</a></li>
+									<li><a href="change_password.html"><i class="fa fa-unlock-alt"></i>&nbsp;&nbsp; Change Password</a></li>
+									<li class="Mob_logout">
+										<a href="login.html">
+											<i class="fa fa-sign-out"></i> 
+											Log out
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts animated fadeInRight">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="edit_profile.html">
+                                <div>
+                                   3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                   Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+				<li class="Desk_logout">
+					<a href="login.html">
+						<i class="fa fa-sign-out"></i> 
+						Log out
+					</a>
+				</li>
+            </ul>
+        </nav>
+        </div>
+		  <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-md-12">
+                    <h2>Patient Details</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">Dashboard</a>
+                        </li>
+						 <li>
+                            <a href="index.html">Pateints</a>
+                        </li>
+                        <li class="active">
+                            <strong>Patient Details</strong>
+                        </li>
+                    </ol>
+                </div>
+				
+            </div>
+			<div class="row wrapper border-bottom white-bg page-heading pateint_sec pateint_details">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-2 col-sm-12 col-xs-12">
+							<div class="profile-image">
+								<img src="img/patient.jpg" class="img-circle circle-border m-b-md" alt="profile">
+							</div>
+						</div>
+						<div class="col-md-10 col-sm-12 col-xs-12 disp_details">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-7">
+									<button class="btn btn-primary btn-circle">
+										<i class="fa fa-user" aria-hidden="true"></i></button><h2 class="mt-0"><strong> Neha Sharma</strong></h2>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-5 text-right">
+									<h2 class="mt-0"><b class="text-navy">#HG1234501</b></h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-sm-6 col-xs-12">
+									<button class="btn btn-primary btn-circle">
+										<i class="fa fa-venus-mars" aria-hidden="true"></i> </button><span> Female , 25</span>
+								</div>
+								<div class="col-md-4 col-sm-6 col-xs-12">
+									<button class="btn btn-primary btn-circle">
+										<i class="fa fa-phone" aria-hidden="true"></i></button> <span>9876598765</span>
+								</div>
+								<div class="col-md-4 hidden-md"></div>
+							</div>
+							<div class="row full_columns">
+								<div class="col-md-4 col-sm-6 col-xs-12">
+									<button class="btn btn-primary btn-circle">
+										<i class="fa fa-envelope-o" aria-hidden="true"></i></button> <a href="mailto:neha.sharma@gmail.com">neha.sharma@gmail.com</a>
+								</div>
+								<div class="col-md-4 col-sm-6 col-xs-12">
+									<button class="btn btn-primary btn-circle">
+										<i class="fa fa-map-marker" aria-hidden="true"></i></button> <span>House No 3121, Phase 7, Mohali</span>
+								</div>
+								<div class="col-md-4 col-sm-6 col-xs-12"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="custom_tabs">
+						<div class="tabs-container">
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true">Personal Details</a></li>
+								<li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">Prescription</a></li>
+								<li class=""><a data-toggle="tab" href="#tab-3" aria-expanded="false">Billing</a></li>
+								<li class=""><a data-toggle="tab" href="#tab-4" aria-expanded="false">Appointment History</a></li>
+							</ul>
+							<div class="tab-content">
+								<div id="tab-1" class="tab-pane active">
+									<div class="panel-body">
+									<!--Patient Details-->
+										<div class="ibox float-e-margins">
+											<div class="ibox-content ibox-heading">
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="name" placeholder="" value="Neha" class="form-control">
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="name" placeholder="" value="Sharma" class="form-control">
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<div class="form-group" id="data_1">
+														<div class="input-group date">
+															<span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="DOB">
+														</div>
+													</div>
+												</div>
+												<div class="row pateint_inner">
+													<div class="col-md-8 col-sm-12 col-xs-12">
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<div class="row">
+																<label class="col-md-12 control-label">Gender</label>
+																<div class="col-md-12 radio_btn">
+																	<div class="radio radio-info radio-inline">
+																		<input type="radio" id="inlineRadio1" value="option1" name="radioInline">
+																		<label for="inlineRadio1">Male</label>
+																	</div>
+																	<div class="radio radio-info radio-inline">
+																		<input type="radio" id="inlineRadio2" value="option2" name="radioInline" checked="">
+																		<label for="inlineRadio2">Female</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6 col-sm-6 col-xs-12">
+															<div class="row">
+																<label class="col-md-12 control-label">Marital Status</label>
+																<div class="col-md-12 radio_btn">
+																	<div class="radio radio-info radio-inline">
+																		<input type="radio" id="inlineRadio3" value="option3" name="radioInline2">
+																		<label for="inlineRadio3">Married</label>
+																	</div>
+																	<div class="radio radio-info radio-inline">
+																		<input type="radio" id="inlineRadio4" value="option4" name="radioInline2" checked="">
+																		<label for="inlineRadio4">Unmarried</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6 col-sm-12 col-xs-12 full_width_div">
+															<select class="form-control m-b" name="account">
+																<option>Select Occupation</option>
+																<option>Doctor</option>
+																<option>Lawyer</option>
+																<option>Student</option>
+																<option>Service</option>
+																<option>House Wife</option>
+																<option>Engineer</option>
+																<option>Professor</option>
+																<option>Others</option>
+															</select>
+														</div>
+														<div class="col-md-6 col-sm-12 col-xs-12 full_width_div">
+															<input type="name" placeholder="other" value="" placeholder="" class="form-control">
+														</div>
+													</div>
+													<div class="col-md-4 col-sm-12 col-xs-12">
+														<div class="row">
+															<div class="col-md-12">
+																<label class="control-label">Blood Group</label><br/>
+																<a href="javascript:void();" class="btn btn-white">A+</a>
+																<a href="javascript:void();" class="btn btn-primary">A-</a>
+																<a href="javascript:void();" class="btn btn-white">B+</a>
+																<a href="javascript:void();" class="btn btn-white">B-</a>
+																<a href="javascript:void();" class="btn btn-white">O+</a>
+																<a href="javascript:void();" class="btn btn-white">O-</a>
+																<a href="javascript:void();" class="btn btn-white">AB-</a>
+																<a href="javascript:void();" class="btn btn-white">AB+</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												
+											</div>
+										</div>
+										<!--Patient Details-->
+										<!--Personal Mediacal History-->
+										<div class="ibox float-e-margins">
+											<div class="ibox-title">
+												<h2>Medical History</h2>
+											</div>
+											<div class="ibox-content ibox-heading personal-history">
+												<div class="col-md-6 col-sm-12">
+													 <div class="form-group">
+														<div>
+															<select  class="chosen-select select2_demo_2 form-control" multiple="multiple" multiple tabindex="4" value="Select Medical Alerts">
+																<option value="Hypertension">Hypertension</option>
+																<option value="Diabetes">Diabetes</option>
+																<option value="Undergone Dental Treatment Earlier">Undergone Dental Treatment Earlier</option>
+																<option value="Pregnant Breast Feeding">Pregnant Breast Feeding</option>
+																<option value="Epilepsey">Epilepsey</option>
+																<option value="Heart Disease">Heart Disease</option>
+																<option value="Allergies">Allergies</option>
+																<option value="Asthma">Asthma</option>
+																<option value="Gastric Ulcers">Gastric Ulcers</option>
+																<option value="Search Medical Alerts">Search Medical Alerts</option>
+																<option value="Smoker">Smoker</option>
+																<option value="Non-Smoker">Non-Smoker</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<textarea name="" value="" class="form-control" placeholder="Notes"></textarea>
+												</div>
+											</div>
+										</div>
+										<!--Personal Mediacal History-->
+										<!--Contact Inforamtion-->
+										<div class="ibox float-e-margins">
+											<div class="ibox-title">
+												<h2>Contact Inforamtion</h2>
+											</div>
+											<div class="ibox-content ibox-heading">
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="email" placeholder="" value="neha.sharma@gmail.com" class="form-control">
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="tel" placeholder="" value="9876598765" class="form-control">
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="tel" placeholder="" value="Extra Phone Number" class="form-control">
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<select class="form-control m-b" name="account">
+														<option value="IS">Iceland</option>
+														<option value="IN">India</option>
+														<option value="ID">Indonesia</option>
+														<option value="IR">Iran, Islamic Republic of</option>
+														<option value="IQ">Iraq</option>
+														<option value="IE">Ireland</option>
+														<option value="KN">Saint Kitts and Nevis</option>
+														<option value="LC">Saint Lucia</option>
+														<option value="MF">Saint Martin (French part)</option>
+														<option value="PM">Saint Pierre and Miquelon</option>
+														<option value="VC">Saint Vincent and the Grenadines</option>
+														<option value="WS">Samoa</option>
+														<option value="SM">San Marino</option>
+														<option value="ST">Sao Tome and Principe</option>
+														<option value="SA">Saudi Arabia</option>
+														<option value="SN">Senegal</option>
+														<option value="RS">Serbia</option>
+														<option value="SC">Seychelles</option>
+														<option value="SL">Sierra Leone</option>
+														<option value="SG">Singapore</option>
+														<option value="SX">Sint Maarten (Dutch part)</option>
+														<option value="SK">Slovakia</option>
+														<option value="SI">Slovenia</option>
+														<option value="SB">Solomon Islands</option>
+														<option value="SO">Somalia</option>
+														<option value="ZA">South Africa</option>
+														<option value="GS">South Georgia and the South Sandwich Islands</option>
+														<option value="SS">South Sudan</option>
+														<option value="ES">Spain</option>
+														<option value="LK">Sri Lanka</option>
+														<option value="SD">Sudan</option>
+														<option value="SR">Suriname</option>
+														<option value="SJ">Svalbard and Jan Mayen</option>
+														<option value="SZ">Swaziland</option>
+														<option value="SE">Sweden</option>
+														<option value="CH">Switzerland</option>
+														<option value="SY">Syrian Arab Republic</option>
+														<option value="TW">Taiwan, Province of China</option>
+														<option value="TJ">Tajikistan</option>
+														<option value="TZ">Tanzania, United Republic of</option>
+														<option value="TH">Thailand</option>
+														<option value="TL">Timor-Leste</option>
+														<option value="TG">Togo</option>
+														<option value="TK">Tokelau</option>
+														<option value="TO">Tonga</option>
+														<option value="TT">Trinidad and Tobago</option>
+														<option value="TN">Tunisia</option>
+														<option value="TR">Turkey</option>
+														<option value="TM">Turkmenistan</option>
+														<option value="TC">Turks and Caicos Islands</option>
+														<option value="TV">Tuvalu</option>
+														<option value="UG">Uganda</option>
+														<option value="UA">Ukraine</option>
+														<option value="AE">United Arab Emirates</option>
+														<option value="GB">United Kingdom</option>
+														<option value="US">United States</option>
+														<option value="UM">United States Minor Outlying Islands</option>
+														<option value="UY">Uruguay</option>
+														<option value="UZ">Uzbekistan</option>
+														<option value="VU">Vanuatu</option>
+														<option value="VE">Venezuela, Bolivarian Republic of</option>
+														<option value="VN">Viet Nam</option>
+														<option value="VG">Virgin Islands, British</option>
+														<option value="VI">Virgin Islands, U.S.</option>
+														<option value="WF">Wallis and Futuna</option>
+														<option value="EH">Western Sahara</option>
+														<option value="YE">Yemen</option>
+														<option value="ZM">Zambia</option>
+														<option value="ZW">Zimbabwe</option>
+													</select>
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<select class="form-control m-b" name="account">
+														<option>Select State</option>
+														<option>Punjab</option>
+														<option>Haryana</option>
+														<option>Delhi</option>
+														<option>Chandigarh</option>
+													</select>
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<select class="form-control m-b" name="account">
+														<option>Select City</option>
+														<option>Amritsar</option>
+														<option>Batala</option>
+														<option>Gurdaspur</option>
+														<option>Pathankot</option>
+													</select>
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="text" placeholder="Flat/door/block no" value="" class="form-control">
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="text" placeholder="Road/street/lane" value="" class="form-control">
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="text" placeholder="Pin/Zip Code" value="" class="form-control">
+												</div>
+											</div>
+										</div>
+										<!--Contact Inforamtion-->
+										<!--Reference Source-->
+										<div class="ibox float-e-margins">
+											<div class="ibox-title">
+												<h2>Reference Source</h2>
+											</div>
+											<div class="ibox-content ibox-heading">
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<select class="form-control m-b" name="account">
+														<option>Other</option>
+														<option>Doctor</option>
+														<option>Patient</option>
+														<option>Google</option>
+													</select>
+												</div>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="text" placeholder="name" value="" class="form-control">
+												</div>
+											</div>
+											
+										</div>
+										<!--Reference Source-->
+										<div class="ibox float-e-margins row">
+											<div class="col-md-12 text-center m-t-lg">
+												<button class="btn btn-primary success_detail" type="submit" data-dismiss="modal"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Save</button>&nbsp;&nbsp;&nbsp;
+												<button class="btn btn-white" type="submit" data-dismiss="modal"><i class="fa fa-times"></i> &nbsp;&nbsp;&nbsp;Cancel</button>
+											</div>
+										</div>
+									
+									</div>
+								</div>
+								<div id="tab-2" class="tab-pane">
+									<div class="panel-body">
+										<div class="ibox float-e-margins">
+										<!--<div class="">
+												<div class="ibox-tools">
+													<div class="text-right">
+														<a data-toggle="modal" href="#modal-form2" class="btn btn-primary">+Add New Prescription</a>
+														<div id="modal-form2" class="modal fade in" aria-hidden="true" style="display: none; padding-right: 17px;">
+															<div class="modal-dialog">
+																<div class="modal-content group_popup">
+																	<div class="ibox float-e-margins popup_heading">
+																		<div class="ibox-title">
+																			<h1>Add Prescription<i class="fa fa-times-circle" aria-hidden="true" data-dismiss="modal"></i></h1>
+																		</div>
+																	</div>
+																	<div class="modal-body">
+																		<div class="row">
+																			<form role="form" class="form_popup">
+																			   <div class="form-group">
+																					<div class="row">
+																						<div class="col-md-4 text-left">
+																							<h3>Prescriptions Upload</h3>
+																							<div class="btn-group text-center">
+																								<div class="upload_img">
+																									<i class="fa fa-upload" aria-hidden="true"></i>
+																									<span>Drag Image here</span>
+																								</div>
+																								<label title="Upload image file" for="inputImage" class="btn btn-default">
+																									<input type="file" accept="image/*" name="file" id="inputImage" class="hide">
+																									<i class="fa fa-upload"></i> Upload Prescription
+																								</label>
+																							</div>
+																						</div>
+																						<div class="col-md-8 text-left">
+																							<h3>Prescriptions Notes</h3>
+																							<div class="row">
+																								<div class="col-md-12">
+																									<input type="name" placeholder="Prescription Name" class="form-control m-b">
+																									<textarea class="form-control" placeholder="Notes"></textarea>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					
+																				</div>
+																				<div class="form-group show_presc" style="display:none;">
+																					<div class="row">
+																						<div class="col-md-4 text-left">
+																							<h3>Prescriptions Upload</h3>
+																							<div class="btn-group text-center">
+																								<div class="upload_img">
+																									<i class="fa fa-upload" aria-hidden="true"></i>
+																									<span>Drag Image here</span>
+																								</div>
+																								<label title="Upload image file" for="inputImage" class="btn btn-default">
+																									<input type="file" accept="image/*" name="file" id="inputImage" class="hide">
+																									<i class="fa fa-upload"></i> Upload Prescription
+																								</label>
+																							</div>
+																						</div>
+																						<div class="col-md-8 text-left">
+																							<h3>Prescriptions Notes</h3>
+																							<div class="row">
+																								<div class="col-md-12">
+																									<input type="name" placeholder="Prescription Name" class="form-control m-b">
+																									<textarea class="form-control" placeholder="Notes"></textarea>
+																								</div>
+																							</div>
+																							<div class="row text-right m-t-md">
+																								<div class="col-md-12">
+																									<button type="button" class="btn btn-w-m btn-danger"id="hide_presc">Remove</button>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row presc_btns">
+																					<div class="col-md-12">
+																						<div class="row">
+																							<div class="col-md-6 text-left">
+																								<button type="button" class="btn btn-w-m btn-success" id="add_more_presc">+ Add More Prescription</button>
+																							</div>
+																							<div class="col-md-6 text-right">
+																								<button type="button" class="btn btn-w-m btn-primary">Save</button>
+																								<button type="button" class="btn btn-w-m btn-default" data-dismiss="modal">Close</button>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>-->
+											<div class="row presc_new">
+												<div class="row">
+													<div class="col-md-4 col-xs-12">
+														<div class="ibox pres_write active">
+															<div class="ibox-content" id="write_presc">
+																<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+																<label>Write A Prescription</label>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-4 col-xs-12">
+														<div class="ibox pres_upload">
+															<div class="ibox-content" id="click_upload">
+																<i class="fa fa-upload" aria-hidden="true"></i>
+																<label>Upload Prescription</label>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-4 col-xs-12">
+														<div class="ibox webcam">
+															<div class="ibox-content" id="click_cam">
+																<i class="fa fa-camera" aria-hidden="true"></i>
+																<label>Webcam</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12 show_file_uploader"  style="display:none;">
+													<form action="#" class="dropzone" id="dropzoneForm">
+														<div class="fallback">
+															<input name="file" type="file" multiple />
+														</div>
+													</form> 
+												</div>
+												<div class="row web_camera text-center" style="display:none;">
+													<div class="col-md-12">
+														<img src="img/webcam.jpg"/>
+														<br/><br/><br/>
+														<button class="btn btn-primary" type="button"><i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Capture</button>
+													</div>
+												</div>
+												<div class="image_uploaded form_popup" style="display:none;">
+													<div class="row">
+														<div class="col-md-3"></div>
+														<div class="col-md-9">
+														<div class="col-md-3 text-left">
+															<div class="btn-group text-center">
+																<div class="upload_img">
+																	<img src="img/prescription.jpg"/>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-9 text-left">
+															<h3>Prescriptions Notes</h3>
+															<div class="row">
+																<div class="col-md-12">
+																	<textarea class="form-control" placeholder="Notes"></textarea><br/>
+																	<a href="javascript:void();" data-dismiss="modal" class="btn btn-primary create_presc">Save</a>
+																</div>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12 show_presc_form">
+													<form role="form" class="form_popup">
+														<div class="row">
+															<div class="col-md-8">
+																<h2>Create a Prescription</h2>
+																	<div class="form-group">
+																		<label class="col-md-3 control-label text-left">Diag.</label>
+																		<div class="col-md-9">
+																			<textarea placeholder="" class="form-control"></textarea>
+																		</div>
+																	</div>
+																	<div class="medication">
+																		<div class="form-group">
+																			<label class="col-md-3 control-label text-left">Name of Medication</label>
+																			<div class="col-md-9">
+																				<div class="pateint_name">
+																					<input type="name" placeholder="" class="form-control">
+																				</div>
+																			</div>
+																		</div>
+																		<div class="form-group">
+																			<label class="col-md-3 control-label text-left">Prescription</label>
+																			<div class="col-md-9">
+																				<div class="pateint_name">
+																					<input type="name" placeholder="Such as Bayer" class="form-control">
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="medication clone_medication border-top" style="display:none;padding-top:15px;">
+																		<div class="form-group">
+																			<label class="col-md-3 control-label text-left">Name of Medication</label>
+																			<div class="col-md-9">
+																				<div class="pateint_name">
+																					<input type="name" placeholder="" class="form-control">
+																				</div>
+																			</div>
+																		</div>
+																		<div class="form-group">
+																			<label class="col-md-3 control-label text-left">Prescription</label>
+																			<div class="col-md-9">
+																				<div class="pateint_name">
+																					<input type="name" placeholder="Such as Bayer" class="form-control">
+																				</div>
+																			</div>
+																		</div>
+																		<div class="form-group">
+																			<div class="col-md-3"></div>
+																			<div class="col-md-9">
+																				<button class="btn btn-danger " type="button" id="hide_medication"><i class="fa fa-times"></i>&nbsp;&nbsp;&nbsp;<span class="bold">Remove</span></button>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<div class="col-md-3"></div>
+																		<div class="col-md-9">
+																			<button class="btn btn-default " type="button" id="show_medication"><i class="fa fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<span class="bold">Add More Medicine</span></button>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<label class="col-md-3 control-label text-left">Precautions</label>
+																		<div class="col-md-9">
+																			<input type="tel" placeholder="" class="form-control"/>
+																		</div>
+																	</div>
+															</div>
+															<div class="col-md-4">
+																<h2>Would you like to Suggest some Test?</h2>
+																<div class="form-group">
+																	<div>
+																		<select class="chosen-select select2_demo_2 form-control" multiple="multiple" multiple tabindex="4" value="Select Medical Alerts">
+																			<option value="Abdominoplasty (Tummy Tuck ( Abdominoplasty))">Abdominoplasty (Tummy Tuck ( Abdominoplasty))</option>
+																			<option value="Ablation Therapy for Arrhythmias.">Ablation Therapy for Arrhythmias.</option>
+																			<option value="Ablation, Endometrial (Endometrial Ablation)">Ablation, Endometrial (Endometrial Ablation)</option>
+																			<option value=" Ablation, Uterus (Endometrial Ablation)"> Ablation, Uterus (Endometrial Ablation)</option>
+																			<option value="Abnormal Liver Enzymes (Liver Blood Tests)">Abnormal Liver Enzymes (Liver Blood Tests)</option>
+																			<option value="Absorbent Products Incontinence (Urinary Incontinence Products for Men)">Absorbent Products Incontinence (Urinary Incontinence Products for Men)</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group m-b">
+																	<div class="row suggest_test">
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option1"> Abdominoplasty (Tummy Tuck ( Abdominoplasty))
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option1"> Ablation Therapy for Arrhythmias.
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option1"> Ablation, Endometrial (Endometrial Ablation)
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option1"> Ablation, Uterus (Endometrial Ablation)
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option2"> Abnormal Liver Enzymes (Liver Blood Tests)
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option3"> Absorbent Products Incontinence (Urinary Incontinence Products for Men)
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option1"> Abdominoplasty (Tummy Tuck ( Abdominoplasty))
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option1"> Ablation Therapy for Arrhythmias.
+																			</label>
+																		</div>
+																		<div class="col-md-12 m-b">
+																			<label class="checkbox-inline i-checks"> 
+																				<input type="checkbox" value="option1"> Ablation, Endometrial (Endometrial Ablation)
+																			</label>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-md-12 m-b">
+																			<div class="add_new_test" style="display:none;">
+																				<input type="name" placeholder="" class="form-control">
+																			</div>
+																			<button type="button" class="btn btn-block btn-outline btn-default" id="add_test">+ Add New Test</button>
+																		</div>
+																	</div>	
+																</div>
+															</div>
+															<div class="col-md-12 text-center">
+																<div class="form-group">
+																	<a data-toggle="modal" href="#modal-form" class="btn btn-default"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Preview Prescription</a>&nbsp;&nbsp;&nbsp;
+																	<a href="javascript:void();" class="btn btn-primary success_msg"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Save</a>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+											<div class="ibox-content table-responsive">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th>PRESCRIPTION NAME</th>
+															<th>PRESCRIPTION NOTES</th>
+															<th>ACTION</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><img src="img/prescription.jpg"/><h3>Prescription Name A</h3><button type="button" class="btn btn-default btn-xs">Download</button></td>
+															<td>2 Test<br/>
+																1. Urine Routine Examination<br/>
+																2. Liqid profile</td>
+															<td>
+																<a data-toggle="modal" href="#modal-form" class="btn btn-primary">
+																	<i class="fa fa-eye" aria-hidden="true"></i>
+																</a>
+																<a href="" class="btn btn-default">
+																	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+																</a>
+																<a href="" class="btn btn-default">
+																	<i class="fa fa-print" aria-hidden="true"></i>
+																</a>
+															</td>
+														</tr>
+														<tr>
+															<td><img src="img/prescription.jpg"/><h3>Prescription Name B</h3><button type="button" class="btn btn-default btn-xs">Download</button></td>
+															<td>2 Test<br/>
+																1. Urine Routine Examination<br/>
+																2. Liqid profile</td>
+															<td>
+																<a data-toggle="modal" href="#modal-form" class="btn btn-primary">
+																	<i class="fa fa-eye" aria-hidden="true"></i>
+																</a>
+																<a href="" class="btn btn-default">
+																	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+																</a>
+																<a href="" class="btn btn-default">
+																	<i class="fa fa-print" aria-hidden="true"></i>
+																</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div id="modal-form" class="modal animated bounceInRight" aria-hidden="true" style="display: none; padding-right: 17px;">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="ibox float-e-margins popup_heading" style="margin-bottom:0px;">
+															<div class="ibox-title">
+																<h1><i class="fa fa-times-circle" aria-hidden="true" data-dismiss="modal"></i></h1>
+															</div>
+														</div>
+														<div class="modal-body">
+															<div class="row">
+																<form role="form" class="form_popup">
+																	<div class="form-group">
+																		<div class="col-md-6">
+																			<img src="img/clinic-logo-1.png"/>
+																		</div>
+																		<div class="col-md-6 text-right">
+																			<b>DEA#</b> BHSDFBEGdbg<br>
+																			<b>License#</b> 1234568888<br>
+																			<b>NPI#</b> 135646544848<br>
+																		</div>
+																	</div>
+																	<div class="form-group view_presc">
+																		<div class="col-md-6 text-left">
+																			<h3 class="control-label">
+																				Dr. Deepak Dawar
+																			</h3>
+																			<label class="control-label">
+																				DSS 261 First Floor, Sector 20, Panchkula, Haryana 134117
+																			</label>
+																			<label class="control-label">
+																				dr4dawar@gmail.com
+																			</label>
+																			<label class="control-label">
+																				086990 12340
+																			</label>
+																		</div>
+																		<div class="col-md-6 text-right">
+																			<label class="control-label">
+																				<strong>Name:</strong> Rajni Dhiman
+																			</label>
+																			<label class="control-label">
+																				<strong>DOB:</strong> 24 July,1994
+																			</label>
+																			<label class="control-label">
+																				<strong>Age/Gender:</strong> 23/F
+																			</label>
+																			<label class="control-label">
+																				<strong>Address:</strong> HL 255, Phase 2, Mohali
+																			</label>
+																			<label class="control-label">
+																				<strong>Allergies:</strong> NKDA
+																			</label>
+																			<label class="control-label">
+																				<strong>Date:</strong> August 12,2017
+																			</label>
+																		</div>
+																	</div>
+																	<hr class="hr-line-dashed">
+																	<div class="ibox-content table-responsive">
+																		<table class="table table-striped">
+																			<thead>
+																				<tr>
+																					<th>Medicines</th>
+																					<th>Dosage</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>Mox bd tab dt (400mg)</td>
+																					<td>(1-0-1) for 5 days</td>
+																				</tr>
+																				<tr>
+																					<td>Calpol tab (500mg)</td>
+																					<td>(0-0-1) for 2 days</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	<div class="form-group text-left">
+																		<h3>Notes: Please consult me after 3 days</h3>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--<div class="row">
+											<div class="col-md-12 text-right">
+												<button type="button" class="btn btn-w-m btn-primary">Share</button>
+												<button type="button" class="btn btn-w-m btn-success">Print</button>
+											</div>
+										</div>-->
+									</div>
+								</div>
+								<div id="tab-3" class="tab-pane">
+									<div class="panel-body">
+										<div class="ibox float-e-margins">
+											<div class="ibox-title">
+												<h2>Billing</h2>
+												<div class="ibox-tools">
+													<div class="text-right">
+														<a href="add_bill2.html" class="btn btn-primary">+ Add Bill</a>
+													</div>
+												</div>
+											</div>
+										<div class="ibox-content table-responsive">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>Bill ID</th>
+														<th>TOWARDS</th>
+														<th>TOTAL AMOUNT (₹)</th>
+														<th>PAID AMOUNT (₹)</th>
+														<th>BALANCE (₹)</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>INV1<span class="label label-info pull-right">NEW</span></td>
+														<td>Consultation and treatment</td>
+														<td>900.00</td>
+														<td>900.00</td>
+														<td>900.00</td>
+														<td><a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+														<a href="" class="btn btn-default"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+														</td>
+													</tr>
+													<tr>
+														<td>INV2</td>
+														<td>Body Pack</td>
+														<td>500.00</td>
+														<td>500.00</td>
+														<td>500.00</td>
+														<td><a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+														<a href="" class="btn btn-default"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+														</td>
+													</tr>
+													<tr>
+														<td>INV1<span class="label label-info pull-right">NEW</span></td>
+														<td>Consultation and treatment</td>
+														<td>900.00</td>
+														<td>900.00</td>
+														<td>900.00</td>
+														<td><a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+														<a href="" class="btn btn-default"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+														</td>
+													</tr>
+													<tr>
+														<td>INV1<span class="label label-info pull-right">NEW</span></td>
+														<td>Consultation and treatment</td>
+														<td>900.00</td>
+														<td>900.00</td>
+														<td>900.00</td>
+														<td><a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+														<a href="" class="btn btn-default"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<!--<div class="col-md-10 text-right">
+												<h2>Estimated Total: <b class="text-navy">₹ 1,400.00</b></h2>
+											</div>
+											<div class="col-md-2"></div>-->
+										</div>
+									</div>
+									</div>
+								</div>
+								<div id="tab-4" class="tab-pane">
+									<div class="panel-body">
+										<div class="ibox float-e-margins">
+											<div class="ibox-title">
+												<h2>Appointment History</h2>
+												<div class="ibox-content table-responsive">
+													<table class="table table-striped">
+														<thead>
+															<tr>
+																<th>TIME</th>
+																<th>DOCTOR NAME</th>
+																<th>PRESCRIPTION UPLOAD</th>
+																<th>PRESCRIPTION NOTES</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>17 June,2017 Morning<br/>(10-11)</td>
+																<td>Dr. Deepak Dawar</td>
+																<td><img src="img/prescription.jpg"/><br/><button type="button" class="btn btn-default btn-xs m-t-xs download_pres">Download</button></td>
+																<td>
+																	2 Test<br/>
+																	1. Urine Routine Examination<br/>
+																	2. Liqid profile
+																</td>
+															</tr>
+															<tr>
+																<td>17 June,2017 Morning<br/>(10-11)</td>
+																<td>Dr. Deepak Dawar</td>
+																<td><img src="img/prescription.jpg"/><br/><button type="button" class="btn btn-default btn-xs m-t-xs download_pres">Download</button></td>
+																<td>
+																	2 Test<br/>
+																	1. Urine Routine Examination<br/>
+																	2. Liqid profile
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><br><br><br><br>
+			<div class="footer">
+				<div class="pull-right">
+					10GB of <strong>250GB</strong> Free.
+				</div>
+				<div>
+					<strong>Copyright</strong> RD Medicos PVT. LTD © 2014-2015
+				</div>
+			</div>
+    </div>
+</div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+	<script src="js/plugins/peity/jquery.peity.min.js"></script>
+	<script src="js/demo/peity-demo.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="js/inspinia.js"></script>
+	<script src="js/plugins/pace/pace.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+	<!-- GITTER -->
+	<script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+	<!-- Sparkline -->
+	<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+	<!-- Sparkline demo data  -->
+	<script src="js/demo/sparkline-demo.js"></script>
+	<script src="js/plugins/iCheck/icheck.min.js"></script>
+
+	<!-- Toastr -->
+	<script src="js/plugins/toastr/toastr.min.js"></script>
+	<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+	<script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+	<script src="js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+	<script src="js/plugins/dropzone/dropzone.js"></script>
+	<script src="js/plugins/clockpicker/clockpicker.js"></script>
+	 <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+	<script>
+	//Clock Picker Start
+	$('.clockpicker').clockpicker();
+	// Clock pciker End
+	$('.success_msg').click(function(){
+		swal({
+			title: "Group Added...!",
+			text: "You Added Group Successfully...!",
+			type: "success"
+		});
+	});
+	$('.create_presc').click(function(){
+		swal({
+			title: "Prescription Created...!",
+			text: "You Created prescription Successfully...!",
+			type: "success"
+		});
+	});
+	$('.success_detail').click(function(){
+		swal({
+			title: "Saved Successfully...!",
+			text: "Your Details has been saved Successfully...!",
+			type: "success"
+		});
+	});
+	$('.bill_added').click(function(){
+		swal({
+			title: "Bill Added Successfully...!",
+			text: "Your Bill has been added Successfully...!",
+			type: "success"
+		});
+	});
+	$('.download_pres').click(function(){
+		swal({
+			title: "Prescription Successfully Downloaded...!",
+			text: "Your Prescription has been Downloaded Successfully...!",
+			type: "success"
+		});
+	});
+	</script>
+<script>
+	$(document).ready(function(){
+		$("#add_more_presc").click(function(){
+			$(".show_presc").show('slow');
+		});
+		$("#hide_presc").click(function(){
+			$(".show_presc").hide('slow');
+		});
+		//table row Hide/show
+		$("#add_row_btn").click(function(){
+			$(".add_table_row").show('slow');
+		});
+		$("#remove_table_row").click(function(){
+			$(".add_table_row").hide('slow');
+		});
+		$("#click_upload").click(function(){
+			$(".show_file_uploader").show('slow');
+			$(".show_presc_form").hide('slow');
+			$(".web_camera").hide('slow');
+		});
+		$("#write_presc").click(function(){
+			$(".show_file_uploader").hide('slow');
+			$(".show_presc_form").show('slow');
+			$(".image_uploaded").hide('slow');
+			$(".web_camera").hide('slow');
+		});
+		$("#show_medication").click(function(){
+			$(".clone_medication").show('slow');
+		});
+		$("#hide_medication").click(function(){
+			$(".clone_medication").hide('slow');
+		});
+		$("#dropzoneForm").click(function(){
+			$(".image_uploaded").show('slow');
+		});
+		$(".webcam").click(function(){
+			$(".web_camera").show('slow');
+			$(".show_file_uploader").hide('slow');
+			$(".image_uploaded").hide('slow');
+			$(".show_presc_form").hide('slow');
+		});
+		$(".pres_upload").click(function(){
+			$(".pres_upload").addClass('active');
+			$(".pres_write").removeClass('active');
+			$(".webcam").removeClass('active');
+		});
+		$(".pres_write").click(function(){
+			$(".pres_write").addClass('active');
+			$(".pres_upload").removeClass('active');
+			$(".webcam").removeClass('active');
+		});
+			$(".webcam").click(function(){
+			$(".webcam").addClass('active');
+			$(".pres_write").removeClass('active');
+			$(".pres_upload").removeClass('active');
+		});
+		$("#add_test").click(function(){
+			$(".add_new_test").show('slow');
+		});
+	});
+</script>
+<script>
+	$('#data_1 .input-group.date').datepicker({
+		todayBtn: "linked",
+		keyboardNavigation: false,
+		forceParse: false,
+		calendarWeeks: true,
+		autoclose: true
+	});
+	
+</script>
+	<script>
+
+    $(document).ready(function() {
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+        /* initialize the external events
+         -----------------------------------------------------------------*/
+
+
+        $('#external-events div.external-event').each(function() {
+
+            // store data so the calendar knows to render an event upon drop
+            $(this).data('event', {
+                title: $.trim($(this).text()), // use the element's text as the event title
+                stick: true // maintain when user navigates (see docs on the renderEvent method)
+            });
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 1111999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+
+        });
+
+
+        /* initialize the calendar
+         -----------------------------------------------------------------*/
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            droppable: true, // this allows things to be dropped onto the calendar
+            drop: function() {
+                // is the "remove after drop" checkbox checked?
+                if ($('#drop-remove').is(':checked')) {
+                    // if so, remove the element from the "Draggable Events" list
+                    $(this).remove();
+                }
+            },
+            events: [
+                {
+                    title: 'All Day Event',
+                    start: new Date(y, m, 1)
+                },
+                {
+                    title: 'Long Event',
+                    start: new Date(y, m, d-5),
+                    end: new Date(y, m, d-2)
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: new Date(y, m, d-3, 16, 0),
+                    allDay: false
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: new Date(y, m, d+4, 16, 0),
+                    allDay: false
+                },
+                {
+                    title: 'Meeting',
+                    start: new Date(y, m, d, 10, 30),
+                    allDay: false
+                },
+                {
+                    title: 'Lunch',
+                    start: new Date(y, m, d, 12, 0),
+                    end: new Date(y, m, d, 14, 0),
+                    allDay: false
+                },
+                {
+                    title: 'Birthday Party',
+                    start: new Date(y, m, d+1, 19, 0),
+                    end: new Date(y, m, d+1, 22, 30),
+                    allDay: false
+                },
+                {
+                    title: 'Click for Google',
+                    start: new Date(y, m, 28),
+                    end: new Date(y, m, 29),
+                    url: 'http://google.com/'
+                }
+            ]
+        });
+
+
+    });
+
+</script>
+<script>
+        $(document).ready(function(){
+
+            $('.tagsinput').tagsinput({
+                tagClass: 'label label-primary'
+            });
+
+            var $image = $(".image-crop > img")
+            $($image).cropper({
+                aspectRatio: 1.618,
+                preview: ".img-preview",
+                done: function(data) {
+                    // Output the result data for cropping image.
+                }
+            });
+
+            var $inputImage = $("#inputImage");
+            if (window.FileReader) {
+                $inputImage.change(function() {
+                    var fileReader = new FileReader(),
+                            files = this.files,
+                            file;
+
+                    if (!files.length) {
+                        return;
+                    }
+
+                    file = files[0];
+
+                    if (/^image\/\w+$/.test(file.type)) {
+                        fileReader.readAsDataURL(file);
+                        fileReader.onload = function () {
+                            $inputImage.val("");
+                            $image.cropper("reset", true).cropper("replace", this.result);
+                        };
+                    } else {
+                        showMessage("Please choose an image file.");
+                    }
+                });
+            } else {
+                $inputImage.addClass("hide");
+            }
+
+            $("#download").click(function() {
+                window.open($image.cropper("getDataURL"));
+            });
+
+            $("#zoomIn").click(function() {
+                $image.cropper("zoom", 0.1);
+            });
+
+            $("#zoomOut").click(function() {
+                $image.cropper("zoom", -0.1);
+            });
+
+            $("#rotateLeft").click(function() {
+                $image.cropper("rotate", 45);
+            });
+
+            $("#rotateRight").click(function() {
+                $image.cropper("rotate", -45);
+            });
+
+            $("#setDrag").click(function() {
+                $image.cropper("setDragMode", "crop");
+            });
+
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+            $('#data_2 .input-group.date').datepicker({
+                startView: 1,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                format: "dd/mm/yyyy"
+            });
+
+            $('#data_3 .input-group.date').datepicker({
+                startView: 2,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_4 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('#data_5 .input-daterange').datepicker({
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+            var elem_4 = document.querySelector('.js-switch_4');
+            var switchery_4 = new Switchery(elem_4, { color: '#f8ac59' });
+                switchery_4.disable();
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+            $('.demo1').colorpicker();
+
+            var divStyle = $('.back-change')[0].style;
+            $('#demo_apidemo').colorpicker({
+                color: divStyle.backgroundColor
+            }).on('changeColor', function(ev) {
+                        divStyle.backgroundColor = ev.color.toHex();
+                    });
+
+            $('.clockpicker').clockpicker();
+
+            $('input[name="daterange"]').daterangepicker();
+
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+
+            $('#reportrange').daterangepicker({
+                format: 'MM/DD/YYYY',
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: { days: 60 },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'right',
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-primary',
+                cancelClass: 'btn-default',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Cancel',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            }, function(start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            });
+
+            $(".select2_demo_1").select2();
+            $(".select2_demo_2").select2();
+            $(".select2_demo_3").select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+
+
+            $(".touchspin1").TouchSpin({
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin2").TouchSpin({
+                min: 0,
+                max: 100,
+                step: 0.1,
+                decimals: 2,
+                boostat: 5,
+                maxboostedstep: 10,
+                postfix: '%',
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin3").TouchSpin({
+                verticalbuttons: true,
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $('.dual_select').bootstrapDualListbox({
+                selectorMinimalHeight: 160
+            });
+
+
+        });
+
+        $('.chosen-select').chosen({width: "100%"});
+
+        $("#ionrange_1").ionRangeSlider({
+            min: 0,
+            max: 5000,
+            type: 'double',
+            prefix: "$",
+            maxPostfix: "+",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_2").ionRangeSlider({
+            min: 0,
+            max: 10,
+            type: 'single',
+            step: 0.1,
+            postfix: " carats",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_3").ionRangeSlider({
+            min: -50,
+            max: 50,
+            from: 0,
+            postfix: "°",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_4").ionRangeSlider({
+            values: [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"
+            ],
+            type: 'single',
+            hasGrid: true
+        });
+
+        $("#ionrange_5").ionRangeSlider({
+            min: 10000,
+            max: 100000,
+            step: 100,
+            postfix: " km",
+            from: 55000,
+            hideMinMax: true,
+            hideFromTo: false
+        });
+
+        $(".dial").knob();
+
+        var basic_slider = document.getElementById('basic_slider');
+
+        noUiSlider.create(basic_slider, {
+            start: 40,
+            behaviour: 'tap',
+            connect: 'upper',
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        var range_slider = document.getElementById('range_slider');
+
+        noUiSlider.create(range_slider, {
+            start: [ 40, 60 ],
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        var drag_fixed = document.getElementById('drag-fixed');
+
+        noUiSlider.create(drag_fixed, {
+            start: [ 40, 60 ],
+            behaviour: 'drag-fixed',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+
+    </script>
+	  <script>
+        $(document).ready(function(){
+            
+			 Dropzone.options.dropzoneForm = {
+            paramName: "file", // The name that will be used to transfer the file
+            maxFilesize: 2, // MB
+            dictDefaultMessage: "<strong>Drop files here or click to upload. </strong></br> (This is just a demo dropzone. Selected files are not actually uploaded.)"
+        };
+
+        $(document).ready(function(){
+
+            var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
+                lineNumbers: true,
+                matchBrackets: true
+            });
+
+            var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
+                lineNumbers: true,
+                matchBrackets: true
+            });
+
+            var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
+                lineNumbers: true,
+                matchBrackets: true
+            });
+
+       });
+
+        });
+
+    </script>
+		 <script>
+       
+    </script>
+</body>
+</html>

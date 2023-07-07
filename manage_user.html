@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health Guru | Manage Users</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	 <link href="css/custom.css" rel="stylesheet">
+	 <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+	 <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+	   <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu side_nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> 
+						<span>
+                            <a href="index.html"><img src="img/hg_logo.svg"/></a>
+                        </span>
+                        </div>
+                        <div class="logo-element">
+                            <a href="index.html"><a href="index.html"><img src="img/hg_logo_icon.svg"/></a></a>
+                        </div>
+                    </li>
+					<li class="sidebar_profile">
+						<a href="edit_profile.html" class="profile_icon"><i class="fa fa-pencil-square-o" aria-hidden="true" style="float:right;"></i></a>
+						<div class="dropdown profile-element"> 
+							<span class="profile_pic">
+								<img alt="image" class="img-circle" src="img/doctor.jpg" />
+							</span>
+							<span class="clear"> 
+								<span class="block m-t-xs"> 
+									<strong class="font-bold">David Williams</strong>
+								</span>
+								<span class="text-xs block">Clinic Head</span>
+							</span>
+						</div>
+					</li>
+                    <li>
+                        <a href="index.html" data-toggle="tooltip" data-placement="right" title="Appointments"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="nav-label">Appointments</span></a>
+                    </li>
+					 <li>
+                        <a href="pateint.html" data-toggle="tooltip" data-placement="right" title="Patients"><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> <span class="nav-label">Patients</span> </a>
+                    </li>
+					 <li>
+                        <a href="billing.html" data-toggle="tooltip" data-placement="right" title="Billing"><i class="fa fa-inr" aria-hidden="true"></i> <span class="nav-label">Billing</span></a>
+                    </li>
+					 <li>
+                        <a href="message.html" data-toggle="tooltip" data-placement="right" data-original-title="Message" title="Message"><i class="fa fa-envelope" aria-hidden="true"></i><span class="nav-label">Message</span></a>
+                    </li>
+					 <li class="active">
+                        <a href="settings.html" data-toggle="tooltip" data-placement="right" title="Settings"><i class="fa fa-cog" aria-hidden="true"></i> <span class="nav-label">Settings</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right right_header">
+				<li class="Start_tour_btn">
+					<a>
+						<button class="btn btn-default startTour" href="#"><i class="fa fa-play" aria-hidden="true"></i> Start Tour</button>
+					</a>
+				</li>
+				<li class="right-side-profile">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-header custom_header">
+							<div class="dropdown profile-element"> 
+								<span class="profile_pic">
+									<img alt="image" class="img-circle" src="img/profile_small.jpg" />
+								</span>
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear"> 
+									<span class="block m-t-xs"> 
+										<strong class="font-bold">DAD's Clinic</strong>
+									</span> 
+								</span>
+								<i class="fa fa-sort-desc" aria-hidden="true"></i> </a>
+								<ul class="dropdown-menu animated fadeInRight m-t-xs profile_menu">
+									<li><a href="edit_profile.html"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp; Edit profile</a></li>
+									<li><a href="change_password.html"><i class="fa fa-unlock-alt"></i>&nbsp;&nbsp; Change Password</a></li>
+									<li class="Mob_logout">
+										<a href="login.html">
+											<i class="fa fa-sign-out"></i> 
+											Log out
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts animated fadeInRight">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="edit_profile.html">
+                                <div>
+                                   3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                   Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+				<li class="Desk_logout">
+					<a href="login.html">
+						<i class="fa fa-sign-out"></i> 
+						Log out
+					</a>
+				</li>
+            </ul>
+        </nav>
+        </div>
+		<div class="row wrapper border-bottom white-bg page-heading bred_select">
+			<div class="col-md-12">
+				<h2>Manage Users</h2>
+				<ol class="breadcrumb">
+					<li>
+						<a href="index.html">Dashboard</a>
+					</li>
+					<li>
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class="active">
+						<strong>Manage Users</strong>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row wrapper border-bottom white-bg page-heading pateint_sec message_sec settings">
+            <div class="ibox float-e-margins">
+					<div class="col-md-12
+						<div class="ibox-tools">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Search user"> 
+										<span class="input-group-btn"> 
+											<button type="button" class="btn btn-primary">Search</button>
+										</span>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 text-right">
+									<div class="form-group">
+										<a data-toggle="modal" href="#modal-form3" class="btn btn-primary full_btn">+Add User</a>
+									</div>
+								</div>
+								
+							</div>
+								<div id="modal-form3" class="modal animated bounceInRight"" aria-hidden="true" style="display: none; padding-right: 17px;">
+									<div class="modal-dialog">
+										<div class="modal-content group_popup">
+											<div class="ibox float-e-margins popup_heading">
+												<div class="ibox-title">
+													<h1>Add New User<i class="fa fa-times-circle" aria-hidden="true" data-dismiss="modal"></i></h1>
+												</div>
+											</div>
+											<div class="modal-body">
+												<div class="row">
+													<form role="form" class="form_popup">
+														<div class="form-group">
+															<div class="col-md-12 file_uploader_custom">
+																<div class="upload_img_cus">
+																	<input type="file" name="imageUpload" id="imageUpload" class="hide"/> 
+																	<label for="imageUpload" class="btn btn-large btn-default">Upload profile</label>
+																</div>
+																<div class="custom_prof_img">
+																	<img src="img/no_img.gif" id="imagePreview" alt="Preview Image" class="img-circle"/>
+																</div>
+															</div>
+														</div>
+													   
+														<div class="form-group">
+															<label class="col-md-3 control-label text-left">User Name</label>
+															<div class="col-md-9"><input type="tel" placeholder="" class="form-control">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 control-label text-left">Email Address</label>
+															<div class="col-md-9"><input type="email" placeholder="" class="form-control">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 control-label text-left">Phone Number</label>
+															<div class="col-md-9">
+																	<input type="name" id="show_new" placeholder="" class="form-control">
+																	<!--<span class="show_new" style="display:none;">New</span>-->
+															</div>
+														</div>
+														<div class="form-group"><label class="col-md-3 control-label text-left">Select Role</label>
+															<div class="col-md-9">
+																<select class="form-control m-b" name="account">
+																	<option>Select Role</option>
+																	<option>Account</option>
+																	<option>Staff</option>
+																	<option>Support</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-md-3"><h3>Access</h3></div>
+														<div class="col-md-9 m-b checkin_tab">
+															<div class="form-group m-b">
+																<div class="row">
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option1"> Patient
+																		</label>
+																	</div>
+																	<div class="col-md-8">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option2"> Appointments
+																		</label>
+																	</div>
+																</div>
+															</div>
+															<div class="form-group">
+																<div class="row">
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option3"> Message
+																		</label>
+																	</div>
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option1"> Account
+																		</label>
+																	</div>
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option2"> Settings
+																		</label>
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+														<div class="form-group">
+															<div class="col-md-3"></div>
+															<div class="col-md-9 text-left">
+																<button type="button" class="btn btn-w-m btn-primary success_msg" data-dismiss="modal"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>&nbsp;
+																<button type="button" class="btn btn-w-m btn-default" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user1.jpg">
+								<h3 class="m-b-xs"><strong>Neha Sharma</strong></h3>
+								<div class="font-bold">Staff</div>
+								<address class="m-t-md">
+									<strong>neha.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4" class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+									<div id="modal-form4" class="modal animated bounceInRight"" aria-hidden="true" style="display: none; padding-right: 17px;">
+									<div class="modal-dialog">
+										<div class="modal-content group_popup">
+											<div class="ibox float-e-margins popup_heading">
+												<div class="ibox-title">
+													<h1>Edit User<i class="fa fa-times-circle" aria-hidden="true" data-dismiss="modal"></i></h1>
+												</div>
+											</div>
+											<div class="modal-body">
+												<div class="row">
+													<form role="form" class="form_popup">
+														<div class="form-group">
+															<div class="col-md-12 file_uploader_custom">
+																<div class="upload_img_cus">
+																	<input type="file" name="imageUpload" id="imageUpload" class="hide"/> 
+																	<label for="imageUpload" class="btn btn-large btn-default">Update Profile</label>
+																</div>
+																<div class="custom_prof_img">
+																	<img src="img/doctor.jpg" id="imagePreview" alt="Preview Image" class="img-circle"/>
+																</div>
+															</div>
+														</div>
+														<div class="form-group"><label class="col-md-3 control-label text-left">User Name</label>
+															<div class="col-md-9"><input type="text" placeholder="" value="David Williams" class="form-control">
+															</div>
+														</div>
+														<div class="form-group"><label class="col-md-3 control-label text-left">Email Address</label>
+															<div class="col-md-9"><input type="email" placeholder="" value="davidwillimas@gmail.com" class="form-control">
+															</div>
+														</div>
+													   <div class="form-group"><label class="col-md-3 control-label text-left">Phone Number</label>
+															<div class="col-md-9">
+																<input type="tel" placeholder="" value="9876597589" class="form-control">
+																<!--<span class="show_new" style="display:none;">New</span>-->
+															</div>
+														</div>
+													
+														<div class="form-group"><label class="col-md-3 control-label text-left">Select Role</label>
+															<div class="col-md-9">
+																<select class="form-control m-b" name="account">
+																	<option>Select Role</option>
+																	<option selected>Account</option>
+																	<option>Staff</option>
+																	<option>Support</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-md-3 text-left"><h3>Access</h3></div>
+														<div class="col-md-9 m-b checkin_tab text-left">
+															<div class="form-group m-b">
+																<div class="row">
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" checked value="option1"> Patient
+																		</label>
+																	</div>
+																	<div class="col-md-8">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option2"> Appointments
+																		</label>
+																	</div>
+																</div>
+															</div>
+															<div class="form-group">
+																<div class="row">
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option3"> Message
+																		</label>
+																	</div>
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" checked value="option1"> Account
+																		</label>
+																	</div>
+																	<div class="col-md-4">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="checkbox" value="option2"> Settings
+																		</label>
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+														<div class="form-group">
+															<div class="col-md-3"></div>
+															<div class="col-md-9 text-left">
+																<button type="button" class="btn btn-w-m btn-primary success_msg" data-dismiss="modal"><i class="fa fa-floppy-o" aria-hidden="true"></i> Update User</button>&nbsp;
+																<button type="button" class="btn btn-w-m btn-default" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user2.jpg">
+								<h3 class="m-b-xs"><strong>Donny Yang</strong></h3>
+								<div class="font-bold">Staff</div>
+								<address class="m-t-md">
+									<strong>donny.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+									<i class="fa fa-cog btn btn-default" aria-hidden="true" title="Settings"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4"  class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user3.jpg">
+								<h3 class="m-b-xs"><strong>Sumanpreet Kaur</strong></h3>
+								<div class="font-bold">Account</div>
+								<address class="m-t-md">
+									<strong>Suman.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+									<i class="fa fa-cog btn btn-default" aria-hidden="true" title="Settings"></i>
+									<i class="fa fa-envelope btn btn-default" aria-hidden="true" title="Message"></i>
+									<i class="fa fa-user btn btn-default" aria-hidden="true" title="Account"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4"  class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user4.jpg">
+								<h3 class="m-b-xs"><strong>Samarjeet Singh</strong></h3>
+								<div class="font-bold">Support</div>
+								<address class="m-t-md">
+									<strong>samar.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+									<i class="fa fa-cog btn btn-default" aria-hidden="true" title="Settings"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4"  class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user5.jpg">
+								<h3 class="m-b-xs"><strong>Sunaina</strong></h3>
+								<div class="font-bold">Staff</div>
+								<address class="m-t-md">
+									<strong>sunaina.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+									<i class="fa fa-cog btn btn-default" aria-hidden="true" title="Settings"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4"  class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user6.jpg">
+								<h3 class="m-b-xs"><strong>Karan Singh</strong></h3>
+								<div class="font-bold">MBBS</div>
+								<address class="m-t-md">
+									<strong>karan.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+									<i class="fa fa-cog btn btn-default" aria-hidden="true" title="Settings"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4"  class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user7.jpg">
+								<h3 class="m-b-xs"><strong>Aakash Mehta</strong></h3>
+								<div class="font-bold">Account</div>
+								<address class="m-t-md">
+									<strong>aakash.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+									<i class="fa fa-cog btn btn-default" aria-hidden="true" title="Settings"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4"  class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="contact-box center-version">
+							<a href="javascript:void();">
+								<img alt="image" class="img-circle" src="img/user8.jpg">
+								<h3 class="m-b-xs"><strong>Yanaya Singh</strong></h3>
+								<div class="font-bold">Staff</div>
+								<address class="m-t-md">
+									<strong>yanaya.clinic1@gmail.com</strong><br>
+									9876598765
+								</address><br>
+								<div class="col-md-12 text-center">
+									<i class="fa fa-clock-o btn btn-default" aria-hidden="true" title="Appointments"></i>
+									<i class="fa fa-wheelchair-alt btn btn-default" aria-hidden="true" title="Patients"></i>
+									<i class="fa fa-cog btn btn-default" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+								</div>
+								<br>
+							</a>
+							<div class="contact-box-footer">
+								<div class="m-t-xs btn-group">
+									<a data-toggle="modal" href="#modal-form4"  class="btn btn-xs btn-white"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit User </a>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div> <br><br><br><br>
+			<div class="footer">
+			<div class="pull-right">
+				10GB of <strong>250GB</strong> Free.
+			</div>
+			<div>
+				<strong>Copyright</strong> RD Medicos PVT. LTD © 2014-2015
+			</div>
+		</div>
+		</div>
+		
+    </div>
+</div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- GITTER -->
+    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+ <script src="js/plugins/iCheck/icheck.min.js"></script>
+  <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+			$('.success_msg').click(function(){
+				swal({
+					title: "Good job!",
+					text: "You Added User Successfully...!",
+					type: "success"
+				});
+			});
+			$('#imageUpload').change(function(){			
+				readImgUrlAndPreview(this);
+				function readImgUrlAndPreview(input){
+					 if (input.files && input.files[0]) {
+							var reader = new FileReader();
+							reader.onload = function (e) {			            	
+								$('#imagePreview').attr('src', e.target.result);
+								}
+						  };
+						  reader.readAsDataURL(input.files[0]);
+					 }	
+			});
+        </script>
+</body>
+</html>

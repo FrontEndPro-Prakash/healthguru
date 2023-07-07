@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health Guru | Generate Bill</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	 <link href="css/custom.css" rel="stylesheet">
+	     <link href="css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="css/plugins/fullcalendar/fullcalendar.print.css" rel='stylesheet' media='print'>
+	 <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+	 <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+	 <link href="css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+	 	<link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+		<link href="css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+</head>
+<body>
+     <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu side_nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> 
+						<span>
+                            <a href="index.html"><img src="img/hg_logo.svg"/></a>
+                        </span>
+                        </div>
+                        <div class="logo-element">
+                            <a href="index.html"><a href="index.html"><img src="img/hg_logo_icon.svg"/></a></a>
+                        </div>
+                    </li>
+					<li class="sidebar_profile">
+						<a href="edit_profile.html" class="profile_icon"><i class="fa fa-pencil-square-o" aria-hidden="true" style="float:right;"></i></a>
+						<div class="dropdown profile-element"> 
+							<span class="profile_pic">
+								<img alt="image" class="img-circle" src="img/doctor.jpg" />
+							</span>
+							<span class="clear"> 
+								<span class="block m-t-xs"> 
+									<strong class="font-bold">David Williams</strong>
+								</span>
+								<span class="text-xs block">Clinic Head</span>
+							</span>
+						</div>
+					</li>
+                    <li>
+                        <a href="index.html" data-toggle="tooltip" data-placement="right" title="Appointments"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="nav-label">Appointments</span></a>
+                    </li>
+					 <li>
+                        <a href="pateint.html" data-toggle="tooltip" data-placement="right" title="Patients"><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> <span class="nav-label">Patients</span> </a>
+                    </li>
+					 <li class="active">
+                        <a href="billing.html" data-toggle="tooltip" data-placement="right" title="Billing"><i class="fa fa-inr" aria-hidden="true"></i> <span class="nav-label">Billing</span></a>
+                    </li>
+					 <li>
+                        <a href="message.html" data-toggle="tooltip" data-placement="right" data-original-title="Message" title="Message"><i class="fa fa-envelope" aria-hidden="true"></i><span class="nav-label">Message</span></a>
+                    </li>
+					 <li>
+                        <a href="settings.html" data-toggle="tooltip" data-placement="right" title="Settings"><i class="fa fa-cog" aria-hidden="true"></i> <span class="nav-label">Settings</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right right_header">
+				<li class="Start_tour_btn">
+					<a>
+						<button class="btn btn-default startTour" href="#"><i class="fa fa-play" aria-hidden="true"></i> Start Tour</button>
+					</a>
+				</li>
+				<li class="right-side-profile">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-header custom_header">
+							<div class="dropdown profile-element"> 
+								<span class="profile_pic">
+									<img alt="image" class="img-circle" src="img/profile_small.jpg" />
+								</span>
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear"> 
+									<span class="block m-t-xs"> 
+										<strong class="font-bold">DAD's Clinic</strong>
+									</span> 
+								</span>
+								<i class="fa fa-sort-desc" aria-hidden="true"></i> </a>
+								<ul class="dropdown-menu animated fadeInRight m-t-xs profile_menu">
+									<li><a href="edit_profile.html"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp; Edit profile</a></li>
+									<li><a href="change_password.html"><i class="fa fa-unlock-alt"></i>&nbsp;&nbsp; Change Password</a></li>
+									<li class="Mob_logout">
+										<a href="login.html">
+											<i class="fa fa-sign-out"></i> 
+											Log out
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts animated fadeInRight">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="edit_profile.html">
+                                <div>
+                                   3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                   Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+				<li class="Desk_logout">
+					<a href="login.html">
+						<i class="fa fa-sign-out"></i> 
+						Log out
+					</a>
+				</li>
+            </ul>
+        </nav>
+        </div>
+		<div class="row wrapper border-bottom white-bg page-heading bred_select">
+			<div class="col-md-12">
+				<h2>Billing</h2>
+				<ol class="breadcrumb">
+					<li>
+						<a href="index.html">Dashboard</a>
+					</li>
+					<li>
+						<a href="billing.html">Billing</a>
+					</li>
+					<li class="active">
+						<strong>Generate New Bill</strong>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row border-bottom dashboard-header billing">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<div class="ibox-tools">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="wrapper wrapper-content animated fadeInRight">
+									<form role="form" id="form">
+									<div class="">
+										<div class="row m-b-md">
+											<div class="col-md-6 col-sm-6 col-xs-6 text-left">
+												<div class=" billing_image">
+												<img src="img/logo-placeholder.png"/>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6  text-right">
+												<div class="row">
+													<div class="col-md-4"></div>
+													<div class="col-md-8">
+														<div class="text-left">
+															<p>
+																<div class="form-group" id="data_1">
+																	<div class="input-group date">
+																		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+																		<input type="text" class="form-control" value="07/13/2017">
+																	</div>
+																</div> 
+															</p>
+															<h4 class="text-navy"><input type="text" name="" value="#HG1234501" class="form-control"/></h4>
+														</div>
+													</div>
+												</div>
+												</div>
+												</div>
+											</div>
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6  text-left">
+												<h2>Patient Details</h2>
+												<address>
+													<strong>Neha Sharma</strong><br>
+													Female , 28<br>
+													9876598765<br>
+													neha.sharma@gmail.com<br>
+													House No 3121, Phase 7, Mohali
+												</address>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6  text-right">
+												<h2>Clinic Details</h2>
+												<address>
+													<strong>Dr. Deepak Dawa</strong><br>
+													111-111-1111<br>
+													deepak.dawar@gmail.com<br>
+													SCO 121, Sector 20, Panchkula
+												</address>
+											</div>
+										</div>
+										<div class="ibox-content no-padding table-responsive">
+											<table class="table table-striped m-t-md">
+												<thead>
+													<tr>
+														<th>TREATMENTS (1)</th>
+														<th>UNIT</th>
+														<th>COST (₹)</th>
+														<th>TOTAL (₹)</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<select class="form-control" name="account">
+																<option>Consultation and treatment</option>
+																<option>Fruit Facial</option>
+																<option>High Sensitive CRP</option>
+																<option>Glycosylated Hemoglobin</option>
+																<option>Glucose Fasting Food</option>
+																<option>Search & Add Service</option>
+															</select>
+														</td>
+														<td>
+															<input type="number" class="form-control" value="1">
+														</td>
+														<td><input type="text" class="form-control" value="900"></td>
+														<td class="text-left">900.00</td>
+														<td><button class="btn btn-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+														</td>
+													</tr>
+													<tr>
+																																															<tr class="add_table_row" style="display:none;">
+														<td>
+															<select class="form-control" name="account">
+																<option>Consultation and treatment</option>
+																<option>Fruit Facial</option>
+																<option>High Sensitive CRP</option>
+																<option>Glycosylated Hemoglobin</option>
+																<option>Glucose Fasting Food</option>
+																<option>Search & Add Service</option>
+															</select>
+														</td>
+														<td>
+															<input type="number" class="form-control" value="1">
+														</td>
+														<td><input type="text" class="form-control" value="900"></td>
+														<td class="text-left">900.00</td>
+														<td><button class="btn btn-danger" id="remove_table_row"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+														</td>
+													</tr>
+													<tr>
+														<td class="text-left">
+															<a href="javascript:void();" class="btn btn-default" id="add_row_btn">+Add Row</a>
+														</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="row">
+											<div class="col-md-4">
+												<div class="form-group">
+													<textarea class="form-control" name="" placeholder="Notes"></textarea>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group text-left">
+													<label name="" class="control-label">MODE OF PAYMENT*</label>
+													<select class="form-control" name="">
+														<option>Cash</option>
+														<option>Card</option>
+														<option>Select An Option</option>
+														<option>Cheque</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<label class="control-label">Estimated Total:</label>
+												<h2><b class="text-navy">₹ 1,400.00</b></h2>
+											</div>
+										</div>
+										<div class="row m-t-md">
+											<div class="col-md-12 text-center">
+												<a class="btn btn-default" href="billing.html" data-dismiss="modal"><i class="fa fa-times"></i> &nbsp;&nbsp;&nbsp;Cancel</a>&nbsp;&nbsp;&nbsp;
+												<button class="ladda-button ladda-button-demo btn btn-sm btn-primary success_msg" data-toggle="tooltip" title="" data-style="zoom-in"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Save</button>
+											</div>
+										</div>
+									</form
+									</div>
+								</div>
+							</div>
+							</div>
+						
+				</div>
+			</div>
+			</div><br><br><br><br>
+			<div class="footer">
+				<div class="pull-right">
+					10GB of <strong>250GB</strong> Free.
+				</div>
+				<div>
+					<strong>Copyright</strong> RD Medicos PVT. LTD © 2014-2015
+				</div>
+			</div>
+		</div>
+		
+    </div>
+</div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+ 
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- GITTER -->
+    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="js/plugins/fullcalendar/moment.min.js"></script>
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+		<script src="js/plugins/iCheck/icheck.min.js"></script>
+	<script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+	
+    <!-- Toastr -->
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+		   <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+		   <script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+			 <script src="js/plugins/clockpicker/clockpicker.js"></script>
+			 <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+			 	  <script src="js/plugins/validate/jquery.validate.min.js"></script>
+<script src="js/plugins/ladda/spin.min.js"></script>
+    <script src="js/plugins/ladda/ladda.min.js"></script>
+    <script src="js/plugins/ladda/ladda.jquery.min.js"></script>
+
+    <script>
+         $(document).ready(function(){
+
+             $("#form").validate({
+                 rules: {
+					name: {
+                         required: true,
+                     },
+                     text: {
+                         required: true,
+                     }
+                 }
+             });
+        });
+    </script>
+<script>
+	$('.exported').click(function(){
+		swal({
+			title: "Exported Successfully!",
+			text: "Your Billing reports exported Successfully...!",
+			type: "success"
+		});
+	});
+	$(document).ready(function(){
+		$("#add_more_presc").click(function(){
+			$(".show_presc").show('slow');
+		});
+		$("#hide_presc").click(function(){
+			$(".show_presc").hide('slow');
+		});
+		//table row Hide/show
+		$("#add_row_btn").click(function(){
+			$(".add_table_row").show('slow');
+		});
+		$("#remove_table_row").click(function(){
+			$(".add_table_row").hide('slow');
+		});
+	});
+</script>
+<script>
+	$('#data_1 .input-group.date').datepicker({
+		todayBtn: "linked",
+		keyboardNavigation: false,
+		forceParse: false,
+		calendarWeeks: true,
+		autoclose: true
+	});
+	//Clock Picker Start
+	$('.clockpicker').clockpicker();
+	// Clock pciker End
+	//Hide/show on Focus Start
+	$(document).ready(function(){
+		$("#show_new").focus(function(){
+		$(".show_new").show('slow');
+	});
+	$('#show_new').blur(function(){
+		if( !$(this).val() ) {
+		$('.show_new').hide('slow');
+		}
+	});
+	//Hide/show on Focus End
+});
+</script>
+<script>
+    $(document).ready(function (){
+        // Bind normal buttons
+        Ladda.bind( '.ladda-button',{ timeout: 2000 });
+        // Bind progress buttons and simulate loading progress
+        Ladda.bind( '.progress-demo .ladda-button',{
+            callback: function( instance ){
+                var progress = 0;
+                var interval = setInterval( function(){
+                    progress = Math.min( progress + Math.random() * 0.1, 1 );
+                    instance.setProgress( progress );
+                    if( progress === 1 ){
+                        instance.stop();
+                        clearInterval( interval );
+                    }
+                }, 200 );
+            }
+        });
+        var l = $( '.ladda-button-demo' ).ladda();
+        l.click(function(){
+            // Start loading
+            l.ladda( 'start' );
+            // Timeout example
+            // Do something in backend and then stop ladda
+            setTimeout(function(){
+                l.ladda('stop');
+            },12000)
+        });
+    });
+</script>
+</body>
+</html>

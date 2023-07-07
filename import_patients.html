@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health Guru | Import Patients</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	 <link href="css/custom.css" rel="stylesheet">
+	    <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet"/>
+		    <link href="css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
+	<link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+	<link href="css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+</head>
+<body>
+     <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu side_nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> 
+						<span>
+                            <a href="index.html"><img src="img/hg_logo.svg"/></a>
+                        </span>
+                        </div>
+                        <div class="logo-element">
+                            <a href="index.html"><a href="index.html"><img src="img/hg_logo_icon.svg"/></a></a>
+                        </div>
+                    </li>
+					<li class="sidebar_profile">
+						<a href="edit_profile.html" class="profile_icon"><i class="fa fa-pencil-square-o" aria-hidden="true" style="float:right;"></i></a>
+						<div class="dropdown profile-element"> 
+							<span class="profile_pic">
+								<img alt="image" class="img-circle" src="img/doctor.jpg" />
+							</span>
+							<span class="clear"> 
+								<span class="block m-t-xs"> 
+									<strong class="font-bold">David Williams</strong>
+								</span>
+								<span class="text-xs block">Clinic Head</span>
+							</span>
+						</div>
+					</li>
+                    <li>
+                        <a href="index.html" data-toggle="tooltip" data-placement="right" title="Appointments"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="nav-label">Appointments</span></a>
+                    </li>
+					 <li>
+                        <a href="pateint.html" data-toggle="tooltip" data-placement="right" title="Patients"><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> <span class="nav-label">Patients</span> </a>
+                    </li>
+					 <li>
+                        <a href="billing.html" data-toggle="tooltip" data-placement="right" title="Billing"><i class="fa fa-inr" aria-hidden="true"></i> <span class="nav-label">Billing</span></a>
+                    </li>
+					 <li>
+                        <a href="message.html" data-toggle="tooltip" data-placement="right" data-original-title="Message" title="Message"><i class="fa fa-envelope" aria-hidden="true"></i><span class="nav-label">Message</span></a>
+                    </li>
+					 <li class="active">
+                        <a href="settings.html" data-toggle="tooltip" data-placement="right" title="Settings"><i class="fa fa-cog" aria-hidden="true"></i> <span class="nav-label">Settings</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right right_header">
+				<li class="Start_tour_btn">
+					<a>
+						<button class="btn btn-default startTour" href="#"><i class="fa fa-play" aria-hidden="true"></i> Start Tour</button>
+					</a>
+				</li>
+				<li class="right-side-profile">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-header custom_header">
+							<div class="dropdown profile-element"> 
+								<span class="profile_pic">
+									<img alt="image" class="img-circle" src="img/profile_small.jpg" />
+								</span>
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear"> 
+									<span class="block m-t-xs"> 
+										<strong class="font-bold">DAD's Clinic</strong>
+									</span> 
+								</span>
+								<i class="fa fa-sort-desc" aria-hidden="true"></i> </a>
+								<ul class="dropdown-menu animated fadeInRight m-t-xs profile_menu">
+									<li><a href="edit_profile.html"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp; Edit profile</a></li>
+									<li><a href="change_password.html"><i class="fa fa-unlock-alt"></i>&nbsp;&nbsp; Change Password</a></li>
+									<li class="Mob_logout">
+										<a href="login.html">
+											<i class="fa fa-sign-out"></i> 
+											Log out
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts animated fadeInRight">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="edit_profile.html">
+                                <div>
+                                   3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                   Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+				<li class="Desk_logout">
+					<a href="login.html">
+						<i class="fa fa-sign-out"></i> 
+						Log out
+					</a>
+				</li>
+            </ul>
+        </nav>
+        </div>
+		<div class="row wrapper border-bottom white-bg page-heading bred_select">
+			<div class="col-md-12">
+				<h2>Import Patients List</h2>
+				<ol class="breadcrumb">
+					<li>
+						<a href="index.html">Dashboard</a>
+					</li>
+					<li>
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class="active">
+						<strong>Import Patients</strong>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row wrapper border-bottom white-bg page-heading pateint_sec import_patients">
+            <div class="ibox float-e-margins">
+				<div class="col-md-12">
+					<div id="wizard" class="stepper_form">
+                            <h1>Step 1</h1>
+                            <div class="step-content">
+								 <div class="text-left m-t-md">
+									<h2>Sample XLSX File</h2>
+									<button type="button" class="ladda-button ladda-button-demo btn btn-w-m btn-default" data-style="zoom-in"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+								</div>
+                            </div>
+                            <h1>Step 2</h1>
+                            <div class="step-content">
+                                 <div class="text-left m-t-md">
+									<h2>Upload</h2>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="btn-group">
+												<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+													<div class="form-control" data-trigger="fileinput">
+													<i class="glyphicon glyphicon-file fileinput-exists"></i>
+													<span class="fileinput-filename"></span>
+													</div>
+													<span class="input-group-addon btn btn-default btn-file">
+														<span class="fileinput-new">Select file</span>
+														<span class="fileinput-exists">Change</span>
+														<input type="file" name="..."/>
+													</span>
+													<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+												</div> 
+											</div>
+										</div>
+										<div class="col-md-6"></div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+				</div>
+			</div> 
+		</div><br><br><br><br>
+		<div class="footer">
+			<div class="pull-right">
+				10GB of <strong>250GB</strong> Free.
+			</div>
+			<div>
+				<strong>Copyright</strong> RD Medicos PVT. LTD © 2014-2015
+			</div>
+		</div>
+    </div>
+</div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+	 <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+    <!-- GITTER -->
+    <script src="js/plugins/steps/jquery.steps.min.js"></script>
+	    <script src="js/plugins/dropzone/dropzone.js"></script>
+		<script src="js/plugins/ladda/spin.min.js"></script>
+<script src="js/plugins/ladda/ladda.min.js"></script>
+<script src="js/plugins/ladda/ladda.jquery.min.js"></script>
+
+		<script>
+        Dropzone.options.dropzoneForm = {
+            paramName: "file", // The name that will be used to transfer the file
+            maxFilesize: 2, // MB
+            dictDefaultMessage: "<strong>Drop files here or click to upload. </strong></br> (This is just a demo dropzone. Selected files are not actually uploaded.)"
+        };
+
+        $(document).ready(function(){
+
+            var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
+                lineNumbers: true,
+                matchBrackets: true
+            });
+
+            var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
+                lineNumbers: true,
+                matchBrackets: true
+            });
+
+            var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
+                lineNumbers: true,
+                matchBrackets: true
+            });
+
+       });
+    </script>
+         <script>
+        $(document).ready(function(){
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex)
+                {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex)
+                    {
+                        return true;
+                    }
+
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18)
+                    {
+                        return false;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex)
+                    {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex)
+                {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                    {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3)
+                    {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Submit form input
+                    form.submit();
+                }
+            }).validate({
+                        errorPlacement: function (error, element)
+                        {
+                            element.before(error);
+                        },
+                        rules: {
+                            confirm: {
+                                equalTo: "#password"
+                            }
+                        }
+                    });
+       });
+    </script>
+	<script>
+    $(document).ready(function (){
+        // Bind normal buttons
+        Ladda.bind( '.ladda-button',{ timeout: 2000 });
+        // Bind progress buttons and simulate loading progress
+        Ladda.bind( '.progress-demo .ladda-button',{
+            callback: function( instance ){
+                var progress = 0;
+                var interval = setInterval( function(){
+                    progress = Math.min( progress + Math.random() * 0.1, 1 );
+                    instance.setProgress( progress );
+                    if( progress === 1 ){
+                        instance.stop();
+                        clearInterval( interval );
+                    }
+                }, 200 );
+            }
+        });
+        var l = $( '.ladda-button-demo' ).ladda();
+        l.click(function(){
+            // Start loading
+            l.ladda( 'start' );
+            // Timeout example
+            // Do something in backend and then stop ladda
+            setTimeout(function(){
+                l.ladda('stop');
+            },2000)
+        });
+    });
+</script>
+</body>
+</html>

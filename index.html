@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health Guru | Dashboard</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	 <link href="css/custom.css" rel="stylesheet">
+	     <link href="css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="css/plugins/fullcalendar/fullcalendar.print.css" rel='stylesheet' media='print'>
+	 <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+	 <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+	 <link href="css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+	  <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+	  <link href="css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+	  <link href="css/plugins/bootstrapTour/bootstrap-tour.min.css" rel="stylesheet">
+	  
+	  
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu side_nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> 
+						<span>
+                            <a href="index.html"><img src="img/hg_logo.svg"/></a>
+                        </span>
+                        </div>
+                        <div class="logo-element">
+                           <a href="index.html"><img src="img/hg_logo_icon.svg"/></a>
+                        </div>
+                    </li>
+					<li class="sidebar_profile">
+						<a href="edit_profile.html" class="profile_icon"><a href="edit_profile.html" class="profile_icon"><i class="fa fa-pencil-square-o" aria-hidden="true" style="float:right;"></i></a></a>
+						<div class="dropdown profile-element"> 
+							<span class="profile_pic">
+								<img alt="image" class="img-circle" src="img/doctor.jpg" />
+							</span>
+							<span class="clear"> 
+								<span class="block m-t-xs"> 
+									<strong class="font-bold">David Williams</strong>
+								</span>
+								<span class="text-xs block">Clinic Head</span>
+							</span>
+						</div>
+					</li>
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="nav-label">Appointments</span></a>
+                    </li>
+					 <li>
+                        <a href="pateint.html" data-tip="Patients"><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> <span class="nav-label">Patients</span> </a>
+                    </li>
+					 <li>
+                        <a href="billing.html" data-tip="Billing"><i class="fa fa-inr" aria-hidden="true"></i> <span class="nav-label">Billing</span></a>
+                    </li>
+					 <li>
+                        <a href="message.html" data-tip="Message"><i class="fa fa-envelope" aria-hidden="true"></i><span class="nav-label">Message</span></a>
+                    </li>
+					 <li>
+                        <a href="settings.html" data-tip="Settings"><i class="fa fa-cog" aria-hidden="true"></i> <span class="nav-label">Settings</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right right_header">	
+				<li class="Start_tour_btn">
+					<a>
+						<button class="btn btn-default startTour" href="#"><i class="fa fa-play" aria-hidden="true"></i> Start Tour</button>
+					</a>
+				</li>
+				<li class="right-side-profile">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-header custom_header">
+							<div class="dropdown profile-element"> 
+								<span class="profile_pic">
+									<img alt="image" class="img-circle" src="img/profile_small.jpg" />
+								</span>
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear"> 
+									<span class="block m-t-xs"> 
+										<strong class="font-bold">DAD's Clinic</strong>
+									</span> 
+								</span>
+								<i class="fa fa-sort-desc" aria-hidden="true"></i> </a>
+								<ul class="dropdown-menu animated fadeInRight m-t-xs profile_menu">
+									<li><a href="edit_profile.html"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp; Edit profile</a></li>
+									<li><a href="change_password.html"><i class="fa fa-unlock-alt"></i>&nbsp;&nbsp; Change Password</a></li>
+									<li class="Mob_logout">
+										<a href="login.html">
+											<i class="fa fa-sign-out"></i> 
+											Log out
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts animated fadeInRight">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="edit_profile.html">
+                                <div>
+                                   3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                   Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+				<li class="Desk_logout">
+					<a href="login.html">
+						<i class="fa fa-sign-out"></i> 
+						Log out
+					</a>
+				</li>
+            </ul>
+        </nav>
+        </div>
+		<div class="row border-bottom dashboard-header custom_matrics">
+			<div class="">
+				<div class="row count-infos">
+					<div class="col-md-6 col-sm-6">
+						<div class="ibox float-e-margins">
+							<h2>5</h2>
+							<p>Total Appointemnt Today</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="ibox float-e-margins">
+							<h2>300</h2>
+							<p>Patients Completed</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="row ibox">
+					<div class="col-md-4 col-sm-6">
+						<select class="form-control m-b" name="account">
+							<option>Select Doctor</option>
+							<option selected>Dr. Deepak Dawar</option>
+							<option>Dr. Amit Kumar</option>
+							<option>Dr. Suman</option>
+						</select>
+					</div>
+					<div class="col-md-8 col-sm-6">
+                        <div class="text-right">
+                            <a data-toggle="modal" class="btn btn-primary" href="#modal-form" id="step1">+ Add Appointment</a>
+                            </div>
+                            <div id="modal-form" class="modal animated bounceInRight" aria-hidden="true" style="display: none; padding-right: 17px;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+									<div class="ibox float-e-margins popup_heading">
+												<div class="ibox-title">
+													<h1>Add Appointment<i class="fa fa-times-circle" aria-hidden="true" data-dismiss="modal"></i></h1>
+												</div>
+											</div>
+                                        <div class="modal-body">
+                                            <div class="row">
+												<form role="form" class="form_popup">
+												   <div class="form-group"><label class="col-md-3 control-label text-left">Patient Name*</label>
+														<div class="col-md-9">
+															<div class="pateint_name">
+																<input type="text" id="show_new" placeholder="" class="form-control" required>
+																<span class="show_new" style="display:none;">New</span>
+															</div>
+														</div>
+													</div>
+													<div class="form-group"><label class="col-md-3 control-label text-left">Mobile Number*</label>
+														<div class="col-md-9"><input type="tel" placeholder="" class="form-control" required>
+														</div>
+													</div>
+													<div class="form-group"><label class="col-md-3 control-label text-left">Email</label>
+														<div class="col-md-9"><input type="email" placeholder="" class="form-control" required>
+														</div>
+													</div>
+													<div class="form-group"><label class="col-md-3 control-label text-left">Gender</label>
+														<div class="col-md-9 radio_btn">
+															<div class="radio radio-info radio-inline">
+																<input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+																<label for="inlineRadio1">Male</label>
+															</div>
+															<div class="radio radio-info radio-inline">
+																<input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+																<label for="inlineRadio2">Female</label>
+															</div>
+														</div>
+													</div>
+													<div class="form-group"><label class="col-md-3 control-label text-left">Doctor</label>
+														<div class="col-md-9">
+															<select class="form-control m-b" name="account">
+																<option>Select Doctor</option>
+																<option>Dr. Deepak Dawar</option>
+																<option>Dr. Amit Kumar</option>
+																<option>Dr. Suman</option>
+															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-md-3 control-label text-left">Date & Time</label>
+														<div class="col-md-9">
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group" id="data_1">
+																		<div class="input-group date">
+																			<span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="Select Date">
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="input-group clockpicker" data-autoclose="true">
+																		<input type="text" class="form-control" value="Select Time" >
+																		<span class="input-group-addon">
+																			<span class="fa fa-clock-o"></span>
+																		</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-md-3 control-label text-left">Duration</label>
+														<div class="col-md-9 text-left">
+															<a href="javascript:void();" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i>15 Mins</a>
+															<a href="javascript:void();" class="btn btn-white">25 Mins</a>
+															<a href="javascript:void();" class="btn btn-white">45 Mins</a>
+															<a href="javascript:void();" class="btn btn-white">60 Mins</a>
+														</div>
+													</div>
+													<div class="form-group"><label class="col-md-3 control-label text-left">Notes</label>
+														<div class="col-md-9"><textarea placeholder="" class="form-control"></textarea>
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="col-md-6 text-left">
+															<a href="javascript:void();" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</a>
+														</div>
+														<div class="col-md-6 text-right">
+															<button data-dismiss="modal" data-toggle="tooltip" data-placement="right" title="Save & Close" class="btn btn-primary btn-w-m success_msg"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Save & Close</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+                                    </div>
+                                </div>
+							</div>
+             
+					</div>
+					<div class="col-md-12 my_calendar">
+						<div id="calendar"></div>
+					</div>
+				</div>
+			</div>
+			
+		</div><br><br><br><br>
+		<div class="footer">
+			<div class="pull-right">
+				10GB of <strong>250GB</strong> Free.
+			</div>
+			<div>
+				<strong>Copyright</strong> RD Medicos PVT. LTD © 2014-2015
+			</div>
+		</div>
+    </div>
+</div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+ 
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- GITTER -->
+    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="js/plugins/fullcalendar/moment.min.js"></script>
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+		<script src="js/plugins/iCheck/icheck.min.js"></script>
+	<script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+	
+    <!-- Toastr -->
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+		   <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+		   <script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+			 <script src="js/plugins/clockpicker/clockpicker.js"></script>
+			   <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="js/plugins/bootstrapTour/bootstrap-tour.min.js"></script>
+	<script src="js/tooltip.js"></script>
+	
+
+ <script src="js/plugins/validate/jquery.validate.min.js"></script>
+
+    <script>
+         $(document).ready(function(){
+
+             $("#form").validate({
+                 rules: {
+                     text: {
+                         required: true,
+                   
+                     },
+                     tel: {
+                         required: true,
+                       
+                     },
+                     email: {
+                         required: true,
+                         number: true
+                     },
+                     min: {
+                         required: true,
+                         minlength: 6
+                     },
+                     max: {
+                         required: true,
+                         maxlength: 4
+                     }
+                 }
+             });
+        });
+    </script>
+
+
+<script>
+	$('.success_msg').click(function(){
+		swal({
+			title: "Good job!",
+			text: "You Added Pateint Successfully...!",
+			type: "success"
+		});
+	});
+	$('#data_1 .input-group.date').datepicker({
+		todayBtn: "linked",
+		keyboardNavigation: false,
+		forceParse: false,
+		calendarWeeks: true,
+		autoclose: true
+	});
+	//Clock Picker Start
+	$('.clockpicker').clockpicker();
+	// Clock pciker End
+	//Hide/show on Focus Start
+	$(document).ready(function(){
+		$("#show_new").focus(function(){
+		$(".show_new").show('slow');
+	});
+	$('#show_new').blur(function(){
+		if( !$(this).val() ) {
+		$('.show_new').hide('slow');
+		}
+	});
+	//Hide/show on Focus End
+});
+</script>
+
+	<script>
+
+    $(document).ready(function() {
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+        /* initialize the external events
+         -----------------------------------------------------------------*/
+
+
+        $('#external-events div.external-event').each(function() {
+
+            // store data so the calendar knows to render an event upon drop
+            $(this).data('event', {
+                title: $.trim($(this).text()), // use the element's text as the event title
+                stick: true // maintain when user navigates (see docs on the renderEvent method)
+            });
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 1111999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+
+        });
+
+
+        /* initialize the calendar
+         -----------------------------------------------------------------*/
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            droppable: true, // this allows things to be dropped onto the calendar
+            drop: function() {
+                // is the "remove after drop" checkbox checked?
+                if ($('#drop-remove').is(':checked')) {
+                    // if so, remove the element from the "Draggable Events" list
+                    $(this).remove();
+                }
+            },
+            events: [
+                {
+                    title: 'All Day Event',
+                    start: new Date(y, m, 1)
+                },
+                {
+                    title: 'Long Event',
+                    start: new Date(y, m, d-5),
+                    end: new Date(y, m, d-2)
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: new Date(y, m, d-3, 16, 0),
+                    allDay: false
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: new Date(y, m, d+4, 16, 0),
+                    allDay: false
+                },
+                {
+                    title: 'Meeting',
+                    start: new Date(y, m, d, 10, 30),
+                    allDay: false
+                },
+                {
+                    title: 'Lunch',
+                    start: new Date(y, m, d, 12, 0),
+                    end: new Date(y, m, d, 14, 0),
+                    allDay: false
+                },
+                {
+                    title: 'Birthday Party',
+                    start: new Date(y, m, d+1, 19, 0),
+                    end: new Date(y, m, d+1, 22, 30),
+                    allDay: false
+                },
+                {
+                    title: 'Click for Google',
+                    start: new Date(y, m, 28),
+                    end: new Date(y, m, 29),
+                    url: 'http://google.com/'
+                }
+            ]
+        });
+
+
+    });
+
+</script>
+<script>
+        $(document).ready(function(){
+
+            $('.tagsinput').tagsinput({
+                tagClass: 'label label-primary'
+            });
+
+            var $image = $(".image-crop > img")
+            $($image).cropper({
+                aspectRatio: 1.618,
+                preview: ".img-preview",
+                done: function(data) {
+                    // Output the result data for cropping image.
+                }
+            });
+
+            var $inputImage = $("#inputImage");
+            if (window.FileReader) {
+                $inputImage.change(function() {
+                    var fileReader = new FileReader(),
+                            files = this.files,
+                            file;
+
+                    if (!files.length) {
+                        return;
+                    }
+
+                    file = files[0];
+
+                    if (/^image\/\w+$/.test(file.type)) {
+                        fileReader.readAsDataURL(file);
+                        fileReader.onload = function () {
+                            $inputImage.val("");
+                            $image.cropper("reset", true).cropper("replace", this.result);
+                        };
+                    } else {
+                        showMessage("Please choose an image file.");
+                    }
+                });
+            } else {
+                $inputImage.addClass("hide");
+            }
+
+            $("#download").click(function() {
+                window.open($image.cropper("getDataURL"));
+            });
+
+            $("#zoomIn").click(function() {
+                $image.cropper("zoom", 0.1);
+            });
+
+            $("#zoomOut").click(function() {
+                $image.cropper("zoom", -0.1);
+            });
+
+            $("#rotateLeft").click(function() {
+                $image.cropper("rotate", 45);
+            });
+
+            $("#rotateRight").click(function() {
+                $image.cropper("rotate", -45);
+            });
+
+            $("#setDrag").click(function() {
+                $image.cropper("setDragMode", "crop");
+            });
+
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+            $('#data_2 .input-group.date').datepicker({
+                startView: 1,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                format: "dd/mm/yyyy"
+            });
+
+            $('#data_3 .input-group.date').datepicker({
+                startView: 2,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_4 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('#data_5 .input-daterange').datepicker({
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+            var elem_4 = document.querySelector('.js-switch_4');
+            var switchery_4 = new Switchery(elem_4, { color: '#f8ac59' });
+                switchery_4.disable();
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+            $('.demo1').colorpicker();
+
+            var divStyle = $('.back-change')[0].style;
+            $('#demo_apidemo').colorpicker({
+                color: divStyle.backgroundColor
+            }).on('changeColor', function(ev) {
+                        divStyle.backgroundColor = ev.color.toHex();
+                    });
+
+            $('.clockpicker').clockpicker();
+
+            $('input[name="daterange"]').daterangepicker();
+
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+
+            $('#reportrange').daterangepicker({
+                format: 'MM/DD/YYYY',
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: { days: 60 },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'right',
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-primary',
+                cancelClass: 'btn-default',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Cancel',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            }, function(start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            });
+
+            $(".select2_demo_1").select2();
+            $(".select2_demo_2").select2();
+            $(".select2_demo_3").select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+
+
+            $(".touchspin1").TouchSpin({
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin2").TouchSpin({
+                min: 0,
+                max: 100,
+                step: 0.1,
+                decimals: 2,
+                boostat: 5,
+                maxboostedstep: 10,
+                postfix: '%',
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin3").TouchSpin({
+                verticalbuttons: true,
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $('.dual_select').bootstrapDualListbox({
+                selectorMinimalHeight: 160
+            });
+
+
+        });
+
+        $('.chosen-select').chosen({width: "100%"});
+
+        $("#ionrange_1").ionRangeSlider({
+            min: 0,
+            max: 5000,
+            type: 'double',
+            prefix: "$",
+            maxPostfix: "+",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_2").ionRangeSlider({
+            min: 0,
+            max: 10,
+            type: 'single',
+            step: 0.1,
+            postfix: " carats",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_3").ionRangeSlider({
+            min: -50,
+            max: 50,
+            from: 0,
+            postfix: "°",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_4").ionRangeSlider({
+            values: [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"
+            ],
+            type: 'single',
+            hasGrid: true
+        });
+
+        $("#ionrange_5").ionRangeSlider({
+            min: 10000,
+            max: 100000,
+            step: 100,
+            postfix: " km",
+            from: 55000,
+            hideMinMax: true,
+            hideFromTo: false
+        });
+
+        $(".dial").knob();
+
+        var basic_slider = document.getElementById('basic_slider');
+
+        noUiSlider.create(basic_slider, {
+            start: 40,
+            behaviour: 'tap',
+            connect: 'upper',
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        var range_slider = document.getElementById('range_slider');
+
+        noUiSlider.create(range_slider, {
+            start: [ 40, 60 ],
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        var drag_fixed = document.getElementById('drag-fixed');
+
+        noUiSlider.create(drag_fixed, {
+            start: [ 40, 60 ],
+            behaviour: 'drag-fixed',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+
+    </script>
+	<script>
+
+    $(document).ready(function (){
+
+        // Instance the tour
+        var tour = new Tour({
+            steps: [{
+
+                    element: "#step1",
+                    title: "Add New Appointment",
+                    content: "Introduce new users to your product by walking them through it step by step.",
+                    placement: "top"
+                }
+            ]});
+
+        // Initialize the tour
+        tour.init();
+
+        $('.startTour').click(function(){
+            tour.restart();
+
+            // Start the tour
+            // tour.start();
+        })
+
+    });
+
+</script>
+<script type="text/javascript">
+    $("[data-toggle=tooltip").tooltip();
+	
+</script>
+</body>
+</html>
